@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SAN TATTOO</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
+body{background:#0a0a0a;font-family:Arial, sans-serif;color:#eee;}
+header{text-align:center;padding:30px 10px 10px;}
+.logo{font-family:'Cinzel', serif;font-size:42px;letter-spacing:4px;color:#fff;text-shadow:0 0 10px rgba(255,255,255,0.3);}
+
+.filter-btn{
+position:fixed;bottom:25px;left:25px;background:#111;border:1px solid #333;color:#fff;
+padding:14px 16px;border-radius:50px;cursor:pointer;box-shadow:0 0 15px rgba(0,0,0,0.5);
+z-index:1000;transition:.3s;
+}
+.filter-btn:hover{background:#222;}
+
+.filters{
+position:fixed;bottom:90px;left:25px;background:#111;border-radius:12px;padding:10px;
+display:none;box-shadow:0 0 15px rgba(0,0,0,0.6);
+}
+.filters button{
+display:block;background:none;border:none;color:#fff;padding:8px 14px;cursor:pointer;
+text-align:left;width:100%;
+}
+.filters button:hover{background:#222;}
+
+.gallery{display:grid;justify-content:center;gap:12px;padding:20px;}
+.gallery img{
+width:100%;height:100%;object-fit:cover;border-radius:8px;cursor:pointer;transition:.4s;
+}
+.gallery img:hover{transform:scale(1.05);}
+
+.gallery-item{width:200px;height:300px;overflow:hidden;}
+
+/* celular */
+@media(max-width:600px){
+.gallery{grid-template-columns:repeat(3, 100px);}
+.gallery-item{width:100px;height:200px;}
+}
+
+/* tablet */
+@media(min-width:601px) and (max-width:1024px){
+.gallery{grid-template-columns:repeat(auto-fill, 150px);}
+.gallery-item{width:150px;height:230px;}
+}
+
+/* pc */
+@media(min-width:1025px){
+.gallery{grid-template-columns:repeat(auto-fill, 200px);}
+}
+
+.lightbox{
+position:fixed;top:0;left:0;width:100%;height:100%;
+background:rgba(0,0,0,0.95);display:none;justify-content:center;align-items:center;
+z-index:999;overflow:auto;padding:30px;
+}
+.lightbox img{
+max-width:90%;max-height:90%;border-radius:10px;animation:zoom .4s ease;
+}
+@keyframes zoom{
+from{transform:scale(.7); opacity:0}
+to{transform:scale(1); opacity:1}
+}
+
+#topBtn{
+position:fixed;bottom:25px;right:25px;background:#111;border:1px solid #333;color:#fff;
+padding:14px 16px;border-radius:50%;cursor:pointer;display:none;font-size:18px;
+box-shadow:0 0 15px rgba(0,0,0,0.6);transition:.3s;
+}
+#topBtn:hover{background:#222;transform:scale(1.1);}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">San Tattoo</div>
+</header>
+
+<div class="filter-btn" onclick="toggleFilters()">Filtros</div>
+
+<div class="filters" id="filters">
+<button onclick="filterSelection('all')">Todos</button>
+<button onclick="filterSelection('fineline')">Fine Line</button>
+<button onclick="filterSelection('preto')">Preto e Cinza</button>
+<button onclick="filterSelection('lettering')">Lettering</button>
+</div>
+
+<section class="gallery">
+<div class="gallery-item preto"><img src="md/1.jpeg"></div>
+<div class="gallery-item preto"><img src="md/2.jpeg"></div>
+<div class="gallery-item preto"><img src="md/3.jpeg"></div>
+<div class="gallery-item fineline"><img src="md/4.jpeg"></div>
+<div class="gallery-item fineline"><img src="md/5.jpeg"></div>
+<div class="gallery-item lettering"><img src="md/6.jpeg"></div>
+<div class="gallery-item preto"><img src="md/7.jpeg"></div>
+<div class="gallery-item lettering"><img src="md/8.jpeg"></div>
+<div class="gallery-item fineline"><img src="md/9.jpeg"></div>
+<div class="gallery-item fineline"><img src="md/10.jpeg"></div>
+<div class="gallery-item fineline"><img src="md/11.jpeg"></div>
+<div class="gallery-item lettering"><img src="md/12.jpeg"></div>
+</section>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+<img id="lightbox-img">
+</div>
+
+<div id="topBtn" onclick="topFunction()">↑</div>
+
+<script>
+const images = document.querySelectorAll(".gallery img");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+
+images.forEach(img=>{
+img.addEventListener("click", ()=>{
+lightbox.style.display="flex";
+lightboxImg.src=img.src;
+});
+});
+
+function closeLightbox(){ lightbox.style.display="none"; }
+
+function toggleFilters(){
+const f = document.getElementById("filters");
+f.style.display = f.style.display === "block" ? "none" : "block";
+}
+
+function filterSelection(category){
+const items = document.querySelectorAll(".gallery-item");
+items.forEach(item=>{
+if(category === "all"){ item.style.display="block"; }
+else{ item.style.display = item.classList.contains(category) ? "block":"none"; }
+});
+}
+
+const topBtn = document.getElementById("topBtn");
+window.onscroll = () =>{
+if(document.documentElement.scrollTop > 300){ topBtn.style.display="block"; }
+else{ topBtn.style.display="none"; }
+}
+function topFunction(){ window.scrollTo({top:0, behavior:'smooth'}); }
+</script>
+
+</body>
+</html>

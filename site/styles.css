@@ -1,0 +1,185 @@
+body{
+background:#0f0f0f;
+color:#e5e5e5;
+font-family:'Merriweather', serif;
+margin:0;
+scroll-behavior:smooth;
+}
+
+section{
+padding:60px 20px;
+text-align:center;
+}
+
+h2{
+color:#9e9e9e;
+margin-bottom:20px;
+}
+
+/* .logo-container{
+text-align:center;
+padding:5px 0;
+line-height: 0;
+}
+
+.logo-container img{
+width:300px;
+max-width:80%;
+display: block;
+margin: 0 auto;
+} */
+
+.logo-text{
+    font-family: 'UnifrakturCook', cursive;
+    font-size: 48px;
+    color: #f1f1f1;
+    text-align: center;
+    letter-spacing: 2px;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.galeria{
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 20px;
+   max-width: 1100px;
+   margin: 0 auto 20px auto;
+}
+
+.galeria img{
+   width: 200px;
+   height: 300px;
+   object-fit: cover;
+   border-radius: 10px;
+   cursor: pointer;
+   transition: 0.4s;
+}
+
+/*.galeria img {
+   width: 200px;
+   height: 300px;
+   object-fit: cover;
+   border-radius: 10px;
+}*/
+
+.ver {
+   padding: 0;
+   margin: 0;
+   color: rgb(213, 7, 7);
+   text-decoration-line: none;
+   font-size: 20px;
+}
+
+.galeria img:hover{
+transform:scale(1.05);
+}
+
+ul{
+list-style:none;
+padding:0;
+}
+
+.agendamento{
+background:#1c1c1c;
+}
+
+form{
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:15px;
+max-width:400px;
+margin:auto;
+}
+
+input, textarea{
+width:100%;
+padding:12px;
+border:none;
+border-radius:5px;
+background:#2a2a2a;
+color:white;
+}
+
+button{
+background:#333;
+color:white;
+padding:12px 25px;
+border:none;
+border-radius:5px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#555;
+}
+
+.whatsapp-float{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px;
+border-radius:50%;
+font-size:22px;
+}
+
+footer{
+background:#080808;
+padding:30px;
+text-align:center;
+}
+
+.social a{
+color:white;
+margin:0 15px;
+font-size:22px;
+}
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+}
+
+.modal img{
+max-width:90%;
+max-height:90%;
+}
+
+.fade-in{
+animation:fadeIn 1.5s ease-in;
+}
+
+.fade-up{
+opacity:0;
+transform:translateY(40px);
+animation:fadeUp 1s forwards;
+}
+
+@keyframes fadeIn{
+from{opacity:0}
+to{opacity:1}
+}
+
+@keyframes fadeUp{
+to{opacity:1; transform:translateY(0)}
+}
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+   .galeria img {
+      width: 100px;
+      height: 200px;
+   }
+}

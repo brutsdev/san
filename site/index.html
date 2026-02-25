@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="San Tattoo - Estúdio profissional de tatuagem. Agende sua tattoo com qualidade e segurança.">
+<meta name="keywords" content="tatuagem, tattoo, estúdio de tatuagem, san tattoo, agendamento tattoo">
+<meta name="author" content="San Tattoo">
+<title>San Tattoo</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="logo-container fade-in">
+   <!-- <img src="logo.jpeg" alt="Logo San Tattoo"> -->
+    <h1 class="logo-text">SAN TATTOO</h1>
+</header>
+
+<section class="sobre fade-up">
+<h2>Sobre</h2>
+<h3>Sobre a San Tattoo</h3>
+
+<p>A San Tattoo nasce da paixão pela arte e pela expressão individual. Mais do que um estúdio de tatuagem, somos um espaço onde histórias ganham forma, sentimentos se transformam em arte e cada traço carrega significado.</p>
+
+<p>Acreditamos que tatuar é um processo único e pessoal. Por isso, cada projeto é desenvolvido com atenção aos detalhes, respeito à ideia do cliente e compromisso com um resultado estético impecável. Nosso objetivo é transformar inspirações em tatuagens que representem identidade, estilo e autenticidade.</p>
+
+<h3>O que fazemos</h3>
+
+<p>Na San Tattoo, criamos tatuagens personalizadas com técnica, precisão e cuidado em cada etapa do processo. Trabalhamos lado a lado com o cliente, desde o conceito inicial até a finalização da arte, garantindo uma experiência confortável, segura e profissional.</p>
+
+<p>Utilizamos materiais de qualidade, seguimos rigorosamente os padrões de higiene e buscamos constantemente aperfeiçoamento artístico para entregar trabalhos modernos e duradouros.</p>
+
+<h3>Especialidades</h3>
+
+<p>Nosso estúdio é especializado em estilos que valorizam elegância, delicadeza e profundidade visual:</p>
+
+<p>Fine Line:</p>
+<p>Linhas finas e precisas que proporcionam tatuagens delicadas, minimalistas e sofisticadas.</p>
+
+<p>Preto e Cinza:</p>
+<p>Sombras suaves e contrastes bem definidos que criam profundidade, realismo e um visual atemporal.</p>
+
+<h3>O que entregamos</h3>
+
+<p>Na San Tattoo, entregamos muito mais do que tatuagens. Entregamos:</p>
+
+<p>✔ Arte exclusiva e personalizada</p>
+<p>✔ Acabamento limpo e detalhado</p>
+<p>✔ Técnicas modernas e seguras</p>
+<p>✔ Atendimento profissional e humanizado</p>
+<p>✔ Uma experiência confortável do início ao fim</p>
+
+<p>Cada tatuagem é feita com dedicação, responsabilidade e respeito pela história que ela representa.</p>
+</section>
+
+<section class="apresentacoes fade-up">
+<h2>Apresentações</h2>
+
+<div class="galeria">
+    <img src="md/1.jpeg" onclick="openModal(this.src)">
+    <img src="md/2.jpeg" onclick="openModal(this.src)">
+    <img src="md/3.jpeg" onclick="openModal(this.src)">
+    
+</div>
+
+<a class="ver" href="galeria.html">Veja mais ...</a>
+
+</section>
+
+<section class="tatuagem fade-up">
+<h2>O que é a tatuagem?</h2>
+<p>A tatuagem é uma arte milenar que consiste na inserção de pigmentos na pele para criar desenhos permanentes. Ela representa identidade, estilo e histórias pessoais. Cada tatuagem é única e carrega significado próprio.</p>
+</section>
+
+<section class="cuidados fade-up">
+<h2>Pré Tattoo</h2>
+<ul>
+<li>• Dormir bem antes da sessão</li>
+<li>• Alimentar-se corretamente</li>
+<li>• Hidratar-se bastante</li>
+<li>• Evitar álcool 24h antes</li>
+<li>• Não ir com pele irritada</li>
+</ul>
+
+<h2>Pós Tattoo</h2>
+<ul>
+<li>• Não remover a proteção antes do tempo</li>
+<li>• Evitar sol direto</li>
+<li>• Não coçar ou arrancar cascas</li>  
+<li>• Evitar piscina e mar</li>
+<li>• Hidratar conforme orientação</li>
+</ul>
+</section>
+
+<section class="agendamento fade-up">
+<h2>Agende sua Tattoo</h2>
+<form action="https://formsubmit.co/gabrieldeoliveirasantos49@gmail.com" method="POST">
+<input type="text" name="name" placeholder="Seu nome" required>
+<input type="tel" name="phone" placeholder="Telefone" required>
+<textarea name="message" placeholder="Descreva sua ideia"></textarea>
+<button type="submit">Agendamento</button>
+</form>
+</section>   
+
+<div id="modal" class="modal" onclick="closeModal()">
+<img id="modal-img">
+</div>
+
+<a href="https://wa.me/5538999594016" class="whatsapp-float" target="_blank">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+<footer> 
+<div class="social">
+<a href="https://wa.me/5538999594016"><i class="fab fa-whatsapp"></i></a>
+<a href="https://instagram.com/santatto.ink"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-x-twitter"></i></a>
+</div>
+<p>&copy; Todos os direitos reservados</p>
+<p>&reg; SAN TATTOO</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
